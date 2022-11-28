@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+todo-app
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>todo app.</h1>
+    <ul>
+        {% for item in items %}
+        <li><a href="/details/{{item["id"]}}">{{item["title"]}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
