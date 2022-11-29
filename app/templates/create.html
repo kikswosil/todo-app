@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Insert a new todo{% endblock %}
+
+{% block content %}
+<div>
+    <form action="/create/" method="post">
+        <label for="title">
+            <p>title: </p>
+            <input type="text" name="title" value="{{request.form['title']}}" id="title-input">
+        </label>
+        <label for="details">
+            <p>details: </p>
+            <textarea name="details" id="details-textarea" cols="30" rows="10">
+                {{request.form['details']}}
+            </textarea>
+        </label>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+</div>
+{% endblock %}

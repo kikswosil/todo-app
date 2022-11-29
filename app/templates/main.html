@@ -9,8 +9,9 @@ todo-app
     <h1>todo app.</h1>
     <ul>
         {% for item in items %}
-        <li><a href="/details/{{item["id"]}}">{{item["title"]}}</a></li>
+        <li><a href="/details/{{item["id"]}}">{{item["title"]}}</a>&nbsp;<a href="/delete/{{item["id"]}}">delete</a></li>
         {% endfor %}
     </ul>
+    <a href="/create/">add a new todo</a>
 </div>
 {% endblock %}
