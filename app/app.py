@@ -2,10 +2,9 @@ from flask import Flask
 from flask import render_template, request, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
-import config
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = config.DB_URL
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 db = SQLAlchemy(app)
 
 
