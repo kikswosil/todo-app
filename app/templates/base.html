@@ -1,8 +1,28 @@
 <!DOCTYPE html>
-<title>{% block title %}{% endblock %}</title>
-<section>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                    'sm': '300px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px'
+                }
+            }
+        }
+    </script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<section class="w-full h-screen flex flex-col justify-between items-center">
     {% block content%}{% endblock %}
+    <footer class="w-full flex justify-center items-center">
+        Made by Krzysztof Lisowski 2022 &copy;
+    </footer>
 </section>
-<footer>
-    Made by Krzysztof Lisowski 2022 &copy;
-</footer>

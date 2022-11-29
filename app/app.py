@@ -18,6 +18,22 @@ with app.app_context():
     db.create_all()
 
 
+# TODO: write an update route and template.
+@app.route('/update/<int:item_id>', methods=('GET', 'POST'))
+def update(item_id):
+    todo = Todo.query.get_or_404(item_id)
+
+    if request.method == 'POST':
+
+        todo.title = request.form['title']
+        todo.details = request.form['details']
+
+        db.session.commit()
+
+        return redirect('/')
+    return render_template("update.html", todo=todo)
+
+
 @app.route('/delete/<int:item_id>')
 def delete(item_id):
     db.session.delete(Todo.query.get_or_404(item_id))

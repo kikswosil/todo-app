@@ -5,13 +5,19 @@ todo-app
 {% endblock %}
 
 {% block content %}
-<div>
-    <h1>todo app.</h1>
+<div class="container justify-center flex items-laft flex-col">
+    <h1 class="text-3xl font-semibold">todo app.</h1>
+    <a href="/create/" class="mx-1 font-semibold my-2 w-fit h-10 p-2 text-slate-200 rounded bg-blue-500 felx items-center justify-center">add a new todo</a>
     <ul>
         {% for item in items %}
-        <li><a href="/details/{{item["id"]}}">{{item["title"]}}</a>&nbsp;<a href="/delete/{{item["id"]}}">delete</a></li>
+        <li class="flex justify-center bg-zinc-200 rounded my-2 mx-1 px-2">
+            <a href="/details/{{item["id"]}}" class="min-w-24 w-full flex justify-left items-center">
+                {{item["title"]}}
+                <a href="/delete/{{item["id"]}}" class="font-semibold rounded text-slate-200 py-2 my-2 w-24 min-h-8 max-h-10 bg-red-600 flex items-center justify-center">delete</a>&nbsp;
+                <a href="/update/{{item["id"]}}" class="font-semibold rounded text-slate-200 py-2 my-2 w-24 min-h-8 max-h-10 bg-blue-500 flex items-center justify-center">edit</a>
+            </a>&nbsp;
+        </li>
         {% endfor %}
     </ul>
-    <a href="/create/">add a new todo</a>
 </div>
 {% endblock %}

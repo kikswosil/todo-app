@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}details of {{item["id"]}}{% endblock %}
 {% block content %}
-<div>
-    <h1>{{item["title"]}}</h1>
-    <p>{{item["details"]}}</p>
-    <a href="/">go back</a>
+<div class="container justify-center flex items-left flex-col">
+    <h1 class="text-3xl h-20 font-semibold flex items-center justify-start">{{item["title"]}}</h1>
+    <p class="bg-zinc-200 rounded mx-1 p-3">{{item["details"]}}</p>
+    <div class="flex flex-row mx-1 space-x-1 sm:justify-center md:justify-start items-center">
+        <a href="/" class="font-semibold rounded text-slate-200 my-2 py-2 w-24 min-h-8 max-h-10 bg-blue-500 flex items-center justify-center">go back</a>
+        <a href="/update/{{item['id']}}" class="font-semibold rounded text-slate-200 my-2 py-2 w-24 min-h-8 max-h-10 bg-blue-500 flex items-center justify-center">edit</a>
+        <a href="/delete/{{item['id']}}" class="font-semibold rounded text-slate-200 my-2 py-2 w-24 min-h-8 max-h-10 bg-red-600 flex items-center justify-center">delete</a>
+    </div>
 </div>
 {% endblock %}
