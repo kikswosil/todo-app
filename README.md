@@ -1,9 +1,9 @@
-## requirements: 
+## Requirements
 - docker-engine
 - python
 - pip
 
-## download and install:
+## Installation
 Firstly download the app as a .zip file, or clone the repository.\
 Then build a docker image:\
 `docker build -t <image name> .`\
@@ -13,7 +13,7 @@ the `-d` flag used above is optional - it makes the docker container \
 run in the background. Then open your web browser and go to:\
 `http://localhost:5000/`, or `http://127.0.0.1:5000/`
 
-## stop the app:
+## Running
 To stop the app, run:\
 `docker ps`\
 you should see something like this:
