@@ -10,12 +10,13 @@ Then build a docker image:\
 And then run the app:\
 `docker run -d -p 5000:5000 <image name>` \
 the `-d` flag used above is optional - it makes the docker container \
-run in the background. 
+run in the background. Then open your web browser and go to:\
+`http://localhost:5000/`, or `http://127.0.0.1:5000/`
 
 ## stop the app:
-To stop the app simply run:\
+To stop the app, run:\
 `docker ps`\
-you should see something like this:\
+you should see something like this:
 ```bash
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 <container id> <image name>   "gunicorn --bind 0.0…"   2 seconds ago   Up 2 seconds   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   reverent_pare
