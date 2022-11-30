@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request, url_for, flash, redirect
+from flask import render_template, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -18,7 +18,6 @@ with app.app_context():
     db.create_all()
 
 
-# TODO: write an update route and template.
 @app.route('/update/<int:item_id>', methods=('GET', 'POST'))
 def update(item_id):
     todo = Todo.query.get_or_404(item_id)
@@ -67,3 +66,4 @@ def index():
 def details(item_id):
     item = Todo.query.get_or_404(item_id)
     return render_template("details.html", item=item)
+
