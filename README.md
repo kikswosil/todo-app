@@ -1,7 +1,8 @@
+# Todo-app
+This is a simple todo app i've made in flask.
+
 ## Requirements
 - docker-engine
-- python
-- pip
 
 ## Installation
 Firstly download the app as a .zip file, or clone the repository.\
