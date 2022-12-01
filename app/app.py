@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request, flash, redirect
+from flask import render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -10,8 +10,8 @@ db = SQLAlchemy(app)
 
 class Todo(db.Model):  # type: ignore
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    details = db.Column(db.String(300), nullable=False)
+    title = db.Column(db.String(100), nullable=False) 
+    details = db.Column(db.String(300), nullable=False,)
 
 
 with app.app_context():
@@ -45,10 +45,8 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         details = request.form['details']
-        if not title:
-            return flash('Title is required.')
-        if not details:
-            return flash('Details are required.')
+        if not title or not details:
+            return redirect('/')
         db.session.add(Todo(title=title, details=details))
         db.session.commit()
 
